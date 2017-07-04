@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Add Book</title>
+<!-- Bootstrap Core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<h1>Welcome to my add Book!!</h1>
+	<form action="#" th:action="@{/addNewBook}" th:object="${book}" method="post">
+		<table border="1">
+			<tr>
+				<td><label>Book Name</label></td>
+				<td><input type="text" th:field="${book.name}" /></td>
+			</tr>
+			<tr>
+				<td><label>Category</label></td>
+				<td><input type="text" th:field="${book.bookCategory.categoryName}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form>
+	<!-- jQuery -->
+	<script src="/vendor/jquery/jquery.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
