@@ -4,10 +4,14 @@
 <meta charset="utf-8">
 <title>Welcome Home Page</title>
 <!-- Bootstrap Core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/vendor/bootstrap/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/vendor/bootstrap/css/user.css" />
 </head>
 <body>
-	<h1>Welcome to my Homepage!!</h1>
+	<h1>Book List Inquiry!!</h1>
 	<table border=1>
 		<tr th:each="book: ${books}">
 			<td th:text="${book.id}" />
@@ -16,8 +20,50 @@
 			<td th:text="${book.bookCategory.categoryName}" />
 		</tr>
 	</table>
-	<form action="#" th:action="@{/addNewBook}" method="get">
-		<input type="submit" value="add Book" />
+	<p>
+	<h1>Book Category List Inquiry!!</h1>
+	<table border=1>
+		<tr th:each="bookCategory: ${bookCategories}">
+			<td th:text="${bookCategory.id}" />
+			<td th:text="${bookCategory.categoryName}" />
+		</tr>
+	</table>
+	<p>
+	
+	
+	
+	<form action="#" th:action="@{/addNewBookCategory}" th:object="${bookCategoryAdded}" method="post">
+		<table border="1">
+			<tr>
+				<td><label>Book Category Name</label></td>
+				<td><input type="text" th:field="${bookCategoryAdded.categoryName}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+		<!-- <p th:each="smokeTest : ${smokeTests}" th:text="${smokeTest.name}">A Smoke Test</p> -->
+	</form>
+	<p>
+	
+	
+	
+	
+	<form action="#" th:action="@{/addNewBook}" th:object="${bookAdded}" method="post">
+		<table border="1">
+			<tr>
+				<td><label>Book Name</label></td>
+				<td><input type="text" th:field="${bookAdded.name}" /></td>
+			</tr>
+			<tr>
+				<td><label>Category</label></td>
+				<td><input type="text" th:field="${bookAdded.bookCategory.categoryName}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+		<!-- <p th:each="smokeTest : ${smokeTests}" th:text="${smokeTest.name}">A Smoke Test</p> -->
 	</form>
 	<!-- jQuery -->
 	<script src="/vendor/jquery/jquery.min.js"></script>
