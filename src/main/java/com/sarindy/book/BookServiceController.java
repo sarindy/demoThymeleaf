@@ -120,4 +120,12 @@ public class BookServiceController {
 		return mv;
 	}
 
+	@RequestMapping(value = "/bootstrap", method = RequestMethod.GET)
+	public ModelAndView bootStrap() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("bootstrap");
+		return mv;
+	}
+
 }
