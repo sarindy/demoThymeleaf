@@ -116,5 +116,21 @@ public class BookServiceController {
 
 		return mv;
 	}
+	
+	
+	
+	
+	@RequestMapping(value = "/returnList", method = RequestMethod.GET)
+	public ModelAndView returnList(Model model) {
+		ModelAndView mv = new ModelAndView();
+		List<String> javaList = new ArrayList<>();
+		javaList.add("list Item1");
+		javaList.add("list Item2");
+		javaList.add("list Item3");
+		javaList.add("list Item4");
+		model.addAttribute("javaList", javaList);
+		mv.setViewName("returnList");
+		return mv;
+	}
 
 }
