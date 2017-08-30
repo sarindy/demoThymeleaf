@@ -135,5 +135,13 @@ public class BookServiceController {
 		mv.setViewName("bootstrap2");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/bootstrap3", method = RequestMethod.GET)
+	public ModelAndView bootStrap3() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("bootstrap3");
+		return mv;
+	}
 
 }
